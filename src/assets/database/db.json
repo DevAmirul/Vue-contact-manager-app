@@ -1,0 +1,56 @@
+{
+   "contacts": [
+      {
+         "id": 1,
+         "name": "amirul11",
+         "email": "ammirul2@gmail",
+         "phone": "12345678900",
+         "company": "google",
+         "title": "json-server",
+         "photo": "https://cdn3.vectorstock.com/i/1000x1000/32/57/young-man-avatar-character-vector-24273257.jpg",
+         "groupId": "1"
+      },
+      {
+         "id": 2,
+         "name": "amirul2222",
+         "email": "ammiru33333l@gmail",
+         "phone": "12345678900",
+         "company": "google",
+         "title": "server",
+         "photo": "https://png.pngtree.com/element_our/20190602/ourlarge/pngtree-cartoon-man-avatar-free-illustration-image_1375256.jpg",
+         "groupId": "2"
+      },
+      {
+         "id": 3,
+         "name": "amirul33",
+         "email": "ammirul@gmail",
+         "phone": "12333333333",
+         "company": "googleggg",
+         "title": "json",
+         "photo": "https://freerangestock.com/sample/116135/handsome-man-avatar-.jpg",
+         "groupId": "3"
+      }
+   ],
+   "groupId": [
+      {
+         "id": 1,
+         "name": "Brother"
+      },
+      {
+         "id": 2,
+         "name": "Friend"
+      },
+      {
+         "id": 3,
+         "name": "family"
+      },
+      {
+         "id": 4,
+         "name": "Colleague"
+      },
+      {
+         "id": 5,
+         "name": "Boss"
+      }
+   ]
+}

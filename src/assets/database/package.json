@@ -1,0 +1,11 @@
+{  "type": "module",
+   "name": "json_database",
+   "version": "1.0.0",
+   "description": "this is json server setup",
+   "main": "index.js",
+   "scripts": {
+      "start": "json-server --watch db.json -p 9000"
+   },
+   "author": "Amirul",
+   "license": "ISC"
+}
