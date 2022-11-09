@@ -1,56 +1,82 @@
 {
-   "contacts": [
-      {
-         "id": 1,
-         "name": "amirul11",
-         "email": "ammirul2@gmail",
-         "phone": "12345678900",
-         "company": "google",
-         "title": "json-server",
-         "photo": "https://cdn3.vectorstock.com/i/1000x1000/32/57/young-man-avatar-character-vector-24273257.jpg",
-         "groupId": "1"
-      },
-      {
-         "id": 2,
-         "name": "amirul2222",
-         "email": "ammiru33333l@gmail",
-         "phone": "12345678900",
-         "company": "google",
-         "title": "server",
-         "photo": "https://png.pngtree.com/element_our/20190602/ourlarge/pngtree-cartoon-man-avatar-free-illustration-image_1375256.jpg",
-         "groupId": "2"
-      },
-      {
-         "id": 3,
-         "name": "amirul33",
-         "email": "ammirul@gmail",
-         "phone": "12333333333",
-         "company": "googleggg",
-         "title": "json",
-         "photo": "https://freerangestock.com/sample/116135/handsome-man-avatar-.jpg",
-         "groupId": "3"
-      }
-   ],
-   "groupId": [
-      {
-         "id": 1,
-         "name": "Brother"
-      },
-      {
-         "id": 2,
-         "name": "Friend"
-      },
-      {
-         "id": 3,
-         "name": "family"
-      },
-      {
-         "id": 4,
-         "name": "Colleague"
-      },
-      {
-         "id": 5,
-         "name": "Boss"
-      }
-   ]
+  "contacts": [
+    {
+      "id": 2,
+      "name": "amirul islam sabbir",
+      "email": "amirul@gmail.com",
+      "phone": 123456789,
+      "company": "google.com",
+      "title": "ceo",
+      "photo": "https://png.pngtree.com/element_our/20190602/ourlarge/pngtree-cartoon-man-avatar-free-illustration-image_1375256.jpg",
+      "groupId": 1
+    },
+    {
+      "id": 3,
+      "name": "Sakib islam",
+      "email": "sakib@gmail.com",
+      "phone": 12333333,
+      "company": "Microsoft",
+      "title": "MD",
+      "photo": "https://freerangestock.com/sample/116135/handsome-man-avatar-.jpg",
+      "groupId": 1
+    },
+    {
+      "name": "Fahad",
+      "email": "fahad@mail.com",
+      "phone": 222229999,
+      "company": "Facebook",
+      "title": "MD",
+      "groupId": 4,
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU8lwLH3hqorSiC6y_5dzOICbomnyrLVk3owi-Q0bjVA&s",
+      "id": 4
+    },
+    {
+      "name": "md rakib ",
+      "email": "rakib@gmail.com",
+      "phone": 111111111111,
+      "company": "google",
+      "title": "CEO",
+      "groupId": 4,
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgS9gt7bRQjO4-HPlDtfczUF7pOHNwDfqHnZgrbXm4qgyul1MgHkneswnmeMRUQNolJeM&usqp=CAU",
+      "id": 5
+    },
+    {
+      "name": "Sabbir",
+      "email": "sabbir@mail",
+      "phone": 4444444444,
+      "company": "Sofy",
+      "title": "Eng",
+      "groupId": 3,
+      "photo": "https://freerangestock.com/sample/116135/handsome-man-avatar-.jpg",
+      "id": 6
+    },
+    {
+      "name": "Sad",
+      "id": 7,
+      "email": "sad@mail",
+      "phone": 22222222,
+      "company": "Google",
+      "groupId": 2,
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz5nVVX-LK19Nq08nauA-CefnowBaAC2k0VDm4ksmL4hx_CTxhhY490hJmBpvWA9ndgeA&usqp=CAU",
+      "title": "Eng"
+    }
+  ],
+  "groupId": [
+    {
+      "id": 1,
+      "name": "Brother"
+    },
+    {
+      "id": 2,
+      "name": "Friend"
+    },
+    {
+      "id": 3,
+      "name": "family"
+    },
+    {
+      "id": 4,
+      "name": "Colleague"
+    }
+  ]
 }

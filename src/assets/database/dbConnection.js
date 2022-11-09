@@ -3,9 +3,9 @@ import axios from "axios";
 export default class dbConnection {
    static url = "http://localhost:9000";
 
-   // get all contact details by id
-   static getAllContacts() {
-      let dataUrl = `${this.url}/contacts`;
+   // get all contact and searching contacts
+   static getAllContacts(searchString) {
+      let dataUrl = `${this.url}/contacts?q=${searchString}`;
       return axios.get(dataUrl);
       // console.log(data);
    }
@@ -15,9 +15,9 @@ export default class dbConnection {
       return axios.get(dataUrl);
    }
    //update single contact by id
-   static updateContacts(id) {
+   static updateContacts(id, data) {
       let dataUrl = `${this.url}/contacts/${id}`;
-      return axios.put(dataUrl);
+      return axios.put(dataUrl, data);
    }
    //delete single contact
    static deleteContacts(id) {
@@ -25,9 +25,9 @@ export default class dbConnection {
       return axios.delete(dataUrl);
    }
    //create/add new contact
-   static createContacts(id) {
+   static addNewContact(data) {
       let dataUrl = `${this.url}/contacts`;
-      return axios.post(dataUrl);
+      return axios.post(dataUrl, data);
    }
    //get all group list
    static getAllGroup(id) {
@@ -40,12 +40,3 @@ export default class dbConnection {
       return axios.get(dataUrl);
    }
 }
-
-// console.log(dbConnection.getAllContacts());
-
-// async function fun() {
-//    const res = await dbConnection.getSingleContacts(1);
-//    console.log(res.data.id);
-// }
-
-// fun();

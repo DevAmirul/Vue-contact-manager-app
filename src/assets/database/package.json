@@ -4,7 +4,10 @@
    "description": "this is json server setup",
    "main": "index.js",
    "scripts": {
-      "start": "json-server --watch db.json -p 9000"
+      "server": "json-server --watch db.json -p 9000"
+   },
+   "dependencies":{
+      "json_server": "^0.17.0"
    },
    "author": "Amirul",
    "license": "ISC"

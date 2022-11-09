@@ -1,19 +1,32 @@
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { RouterLink } from "vue-router";
+//import db connection class.
 import dbConnection from "../assets/database/dbConnection.js";
 
-let allContactsData = reactive({data:[]});
+const allContactsData = reactive({ data: [] });
+const searchString = ref("");
 
-async function getAllContacts() {
+// get all contacts and if you searching any contact then run this func.
+async function getAllContacts(searchString) {
    try {
-      const result = await dbConnection.getAllContacts();
+      const result = await dbConnection.getAllContacts(searchString);
       allContactsData.data = result.data;
    } catch (error) {
       console.log(error);
    }
 }
-getAllContacts();
+getAllContacts(searchString.value);
+
+//delete single contact func
+async function deleteContacts(id) {
+   try {
+      const result = await dbConnection.deleteContacts(id);
+      getAllContacts(searchString.value);
+   } catch (error) {
+      console.log(error);
+   }
+}
 </script>
 <template>
    <div class="container">
@@ -22,13 +35,16 @@ getAllContacts();
             <nav class="navbar bg-transparent">
                <div class="container-fluid">
                   <form class="d-flex bg-transparent" role="search">
+                     <!-- search here any contact -->
                      <input
+                        @input="getAllContacts(searchString)"
+                        v-model="searchString"
                         class="form-control border-success me-2 bg-transparent"
                         type="search"
                         placeholder="Search"
                         aria-label="Search"
                      />
-                     <button class="btn btn-outline-success" type="submit">
+                     <button @click.prevent class="btn btn-outline-success" type="submit">
                         Search
                      </button>
                   </form>
@@ -37,9 +53,11 @@ getAllContacts();
          </div>
          <hr class="mt-3" />
       </div>
-      <div class="row justify-content-center ">
-         <div v-for="data in  allContactsData.data" :key="data.id"
-            class="col-5 m-1 p-2 d-flex  bg-success bg-opacity-25 rounded-3"
+      <div class="row justify-content-center">
+         <div
+            v-for="data in allContactsData.data"
+            :key="data.id"
+            class="col-5 m-1 p-2 d-flex bg-success bg-opacity-25 rounded-3"
          >
             <div class="col-3 rounded-circle m-auto w-auto">
                <img
@@ -65,17 +83,23 @@ getAllContacts();
                </div>
             </div>
             <div class="col-1 d-flex flex-column m-auto">
-               <router-link :to="`/View/${data.id}`" class="btn btn-sm btn-success my-1"
+               <router-link
+                  :to="`/View/${data.id}`"
+                  class="btn btn-sm btn-success my-1"
                   ><i class="bi bi-eye"></i
                ></router-link>
-               <router-link :to="`/Edit/${data.id}`" class="btn btn-sm btn-warning my-1"
+               <router-link
+                  :to="`/Edit/${data.id}`"
+                  class="btn btn-sm btn-warning my-1"
                   ><i class="bi bi-pen"></i
                ></router-link>
-               <button class="btn btn-sm btn-danger my-1">
+               <button
+                  @click="deleteContacts(data.id)"
+                  class="btn btn-sm btn-danger my-1"
+               >
                   <i class="bi bi-trash3"></i>
                </button>
             </div>
-
          </div>
       </div>
    </div>

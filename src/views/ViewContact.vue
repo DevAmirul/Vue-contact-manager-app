@@ -1,31 +1,40 @@
 <script setup>
-import { reactive, ref } from "vue";
-import { useRoute, useRouter, RouterLink } from "vue-router";
+import { reactive } from "vue";
+import { useRoute, useRouter } from "vue-router";
+//import db connection class.
 import dbConnection from "../assets/database/dbConnection.js";
-const route = ref(useRoute());
-const route1 = ref(useRouter());
-const id = ref(route.value.params.id);
+
+const routeBack = useRouter();
+const id = useRoute().params.id;
 let singleContactsData = reactive({ data: {} });
 let singleGroupData = reactive({ data: {} });
 
-async function getSingleContacts(id) {
-   const result = await dbConnection.getSingleContacts(id);
-   const groupResult = await dbConnection.getSingleGroup(result.data.id);
-   singleContactsData.data = result.data;
-   singleGroupData.data = groupResult.data;
-}
-getSingleContacts(id.value);
+//view details single contacts func
+(async function getSingleContacts(id) {
+   try {
+      const result = await dbConnection.getSingleContacts(id);
+      const groupResult = await dbConnection.getSingleGroup(
+         result.data.groupId
+      );
+      singleContactsData.data = result.data;
+      singleGroupData.data = groupResult.data;
+   } catch (error) {
+      console.log(error);
+   }
+})(id);
 </script>
 <template>
+   <!-- go back button -->
+   <div class="container">
+      <button @click="routeBack.back()" class="float-end btn btn-success m-2">
+         Go Back
+      </button>
+   </div>
+   <!-- go back button end -->
    <div class="container">
       <div class="row mb-3">
          <div class="col">
             <h3>View Contact</h3>
-            <p>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-               vitae possimus minima obcaecati consequatur odio sunt. Sapiente
-               quasi explicabo facere atque laborum. Magnam, inventore!
-            </p>
          </div>
          <hr class="mt-3" />
       </div>
@@ -77,11 +86,6 @@ getSingleContacts(id.value);
                      <h4 class="card-text d-inline">
                         {{ singleGroupData.data.name }}
                      </h4>
-                  </div>
-                  <div>
-                     <button
-                        @click="route1.back()" class="btn btn-success m-2" > Go Back </button>
-
                   </div>
                </div>
             </div>
