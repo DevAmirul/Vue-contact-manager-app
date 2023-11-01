@@ -10,6 +10,13 @@ A Vue Contact Manager app, this app can be used to easily store, update, delete 
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
+![App Home](https://i.ibb.co/kHyY4nP/contact1.jpg)
+
+![App Home](https://i.ibb.co/q7GfHwR/contact3.jpg)
+
+![App Home](https://i.ibb.co/Y0St88V/contact2.jpg)
+
+
 ## Project Setup
 ### Here json -server is used as the server. So after downloading the project go inside src/assets/database, now install package.json file 
 ```sh
