@@ -1,6 +1,6 @@
 # contacts-manager
 
-This template should help get you started developing with Vue 3 in Vite.
+A Vue Contact Manager app, this app can be used to easily store, update, delete and search users contact information like name, address and telephone number.
 
 ## Recommended IDE Setup
 
